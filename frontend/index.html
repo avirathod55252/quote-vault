@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quote Vault</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./logo.png" />
+  </head>
+  <body>
+    <!-- NAVBAR WITH LOGO -->
+    <nav class="navbar">
+      <img src="./logo.png" class="logo" alt="Logo" />
+      <h2>Quote Vault</h2>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <h1 class="title">✨ Your Daily Inspiration ✨</h1>
+
+      <div class="input-area">
+        <input id="quoteInput" placeholder="Write a quote..." />
+        <button id="addBtn" onclick="addQuote()">➕ Add</button>
+      </div>
+
+      <ul id="quoteList" class="grid-list"></ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>Created with ❤️ by <strong>Avinash Rathod</strong></footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

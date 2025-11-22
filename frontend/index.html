@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Quote Vault</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quote Vault — Daily Inspiration</title>
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="./logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/mnt/data/2208c185-1a4b-4852-be99-a4ad3fb86828.png"
+    />
   </head>
+
   <body>
-    <!-- NAVBAR WITH LOGO -->
-    <nav class="navbar">
-      <img src="./logo.png" class="logo" alt="Logo" />
-      <h2>Quote Vault</h2>
-    </nav>
-
-    <!-- MAIN CONTAINER -->
-    <div class="container">
-      <h1 class="title">✨ Your Daily Inspiration ✨</h1>
-
-      <div class="input-area">
-        <input id="quoteInput" placeholder="Write a quote..." />
-        <button id="addBtn" onclick="addQuote()">➕ Add</button>
+    <!-- top hero / navbar (centered) -->
+    <header class="site-header" role="banner" aria-label="Quote Vault header">
+      <div class="brand">
+        <!-- local image path provided by you -->
+        <img src="./logo.png" alt="Quote Vault logo" class="brand-logo" />
+        <div class="brand-text">
+          <h1 class="brand-title">Quote Vault</h1>
+          <p class="brand-sub">#AllTogetherPossible</p>
+        </div>
       </div>
+    </header>
 
-      <ul id="quoteList" class="grid-list"></ul>
-    </div>
+    <main class="main" role="main">
+      <section class="card" aria-labelledby="daily-title">
+        <h2 id="daily-title" class="card-title">
+          ✨ Your Daily Inspiration ✨
+        </h2>
 
-    <!-- FOOTER -->
-    <footer>Created with ❤️ by <strong>Avinash Rathod</strong></footer>
+        <form
+          id="quoteForm"
+          class="input-area"
+          onsubmit="event.preventDefault(); addQuote();"
+          aria-label="Add quote form"
+        >
+          <label for="quoteInput" class="sr-only">Write a quote</label>
+          <input
+            id="quoteInput"
+            name="quote"
+            type="text"
+            placeholder="Write a quote..."
+            autocomplete="off"
+            aria-required="true"
+          />
+          <button id="addBtn" type="submit" aria-label="Add quote">
+            ➕ Add
+          </button>
+        </form>
 
-    <script src="script.js"></script>
+        <ul
+          id="quoteList"
+          class="grid-list"
+          aria-live="polite"
+          aria-label="List of quotes"
+        ></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>Created with ❤️ by <strong>Avinash Rathod</strong></p>
+      <p class="small">Quote Vault • Free for learning & open-source</p>
+    </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
